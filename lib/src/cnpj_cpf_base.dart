@@ -124,7 +124,7 @@ abstract class CnpjCpfBase {
     _workingValue = '${_workingValue.substring(0, 3)}.'
         '${_workingValue.substring(3, 6)}.'
         '${_workingValue.substring(6, 9)}/'
-        '${_workingValue.substring(9, 10)}';
+        '${_workingValue.substring(9, 11)}';
     return _removeSpecialChar(_workingValue);
   }
 
