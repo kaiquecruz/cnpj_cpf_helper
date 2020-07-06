@@ -1,4 +1,7 @@
-## 1.0.2
+## 1.0.4
+- Package description improvement
+
+## 1.0.3
 - Remove unused enum
 
 ## 1.0.2
