@@ -16,6 +16,11 @@ void main() {
     test('CNPJ invalid without mask', () {
       expect(CnpjCpfBase.isCnpjValid('07170188000100'), isFalse);
     });
+
+    test('CNPJ masking', () {
+      expect(CnpjCpfBase.maskCnpj('07170188000165'),
+          matches('\\d{2}.\\d{3}.\\d{3}/\\d{4}-\\d{2}'));
+    });
   });
 
   group('CPF tests', () {
@@ -31,6 +36,11 @@ void main() {
     });
     test('CPF invalid without mask', () {
       expect(CnpjCpfBase.isCpfValid('33574272000'), isFalse);
+    });
+
+    test('CPF masking', () {
+      expect(CnpjCpfBase.maskCpf('33574272065'),
+          matches('\\d{3}.\\d{3}.\\d{3}-\\d{2}'));
     });
   });
 }

@@ -1,6 +1,6 @@
 name: cnpj_cpf_helper
 description: This library helps with CNPJ and CPF validations. Both of them are a brazilian documentation where CNPJ is a business document and CPF is a person document. 
-version: 1.0.6
+version: 1.0.7
 homepage: https://github.com/evandrofuhr
 repository: https://github.com/evandrofuhr/cnpj_cpf_helper
 

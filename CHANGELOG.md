@@ -1,3 +1,6 @@
+## 1.0.7
+- Fixed a bug on masking the CPF and tests
+
 ## 1.0.6
 - Fixed a bug on masking the CPF
 
