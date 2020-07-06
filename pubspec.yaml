@@ -1,7 +1,8 @@
 name: cnpj_cpf_helper
 description: Package to helper with CNPJ and CPF 
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/evandrofuhr
+git: https://github.com/evandrofuhr/cnpj_cpf_helper
 
 environment:
   sdk: '>=2.8.1 <3.0.0'
