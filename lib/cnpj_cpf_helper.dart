@@ -1,6 +1,4 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// Library helper to handle CNPJ and CPF validations
 library cnpj_cpf_helper;
 
 export 'src/cnpj_cpf_base.dart';

@@ -2,21 +2,26 @@ import 'dart:math';
 
 import 'package:cnpj_cpf_helper/cnpj_cpf_helper.dart';
 
+/// Abstract base class to handle validations on CNPJ and CPF documents
 abstract class CnpjCpfBase {
   static final _specialChar = '#';
 
+  /// Removes all non-number characters from string
   static String onlyNumbers(String value) {
     return value?.replaceAll(RegExp('[^0-9]'), '')?.trim() ?? '';
   }
 
+  /// Returns if CNPJ document is valid
   static bool isCnpjValid(String value) {
     return cnpjValidate(value) == EDocumentStatus.OK;
   }
 
+  /// Returns if CPF document is valid
   static bool isCpfValid(String value) {
     return cpfValidate(value) == EDocumentStatus.OK;
   }
 
+  /// Returns the CNPJ document Status by the enum `EDocumentStatus`
   static EDocumentStatus cnpjValidate(String value) {
     var _workingValue = onlyNumbers(value);
     if (_workingValue.isEmpty) return EDocumentStatus.EMPTY;
@@ -38,6 +43,7 @@ abstract class CnpjCpfBase {
     return EDocumentStatus.OK;
   }
 
+  /// Returns the CPF document Status by the enum `EDocumentStatus`
   static EDocumentStatus cpfValidate(String value) {
     var _workingValue = onlyNumbers(value);
     if (_workingValue.isEmpty) return EDocumentStatus.EMPTY;
@@ -54,6 +60,7 @@ abstract class CnpjCpfBase {
     return EDocumentStatus.OK;
   }
 
+  /// Returns the digit verification using module 11
   static int _getDigitModule11(
       List<int> numbers, int iniFactor, int endFactor) {
     var _factor = iniFactor;
@@ -75,6 +82,7 @@ abstract class CnpjCpfBase {
     return _digit < 10 ? _digit : 0;
   }
 
+  /// Generates a random CNPJ. Just for tests
   static String randomCnpj({bool withMask = false}) {
     var _numbers = <int>[];
     _numbers.add(Random.secure().nextInt(8) + 1);
@@ -93,6 +101,7 @@ abstract class CnpjCpfBase {
     return _cnpj;
   }
 
+  /// Generates a random CPF. Just for tests
   static String randomCpf({bool withMask = false}) {
     var _numbers = <int>[];
     for (var i = 0; i < 9; i++) {
@@ -107,6 +116,7 @@ abstract class CnpjCpfBase {
     return _cpf;
   }
 
+  /// Returns the given value masquerade like CNPJ
   static String maskCnpj(String value) {
     var _workingValue =
         onlyNumbers(value).padRight(14, _specialChar).substring(0, 14);
@@ -118,6 +128,7 @@ abstract class CnpjCpfBase {
     return _removeSpecialChar(_workingValue);
   }
 
+  /// Returns the given value masquerade like CPF
   static String maskCpf(String value) {
     var _workingValue =
         onlyNumbers(value).padRight(11, _specialChar).substring(0, 11);
@@ -128,6 +139,7 @@ abstract class CnpjCpfBase {
     return _removeSpecialChar(_workingValue);
   }
 
+  // Returns the given value without the internal use character
   static String _removeSpecialChar(String value) {
     var _workingValue = value;
     if (_workingValue.contains(_specialChar)) {
