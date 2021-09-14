@@ -1,3 +1,5 @@
+Fork from, [cnpj_cpf_helper][tracker2], to null safety.
+
 This library helps with CNPJ and CPF validations. Both of them are brazilian a documentation where CNPJ is a business document and CPF is a person document.
 
 ## Usage
@@ -99,3 +101,4 @@ void main() {
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/evandrofuhr/cnpj_cpf_helper/issues
+[tracker2]: https://pub.dev/packages/cnpj_cpf_helper
