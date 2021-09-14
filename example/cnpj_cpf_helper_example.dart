@@ -1,4 +1,4 @@
-import 'package:cnpj_cpf_helper/cnpj_cpf_helper.dart';
+import 'package:cnpj_cpf_helper_nullsafety/cnpj_cpf_helper.dart';
 
 void main() {
   // generate a random cnpj
