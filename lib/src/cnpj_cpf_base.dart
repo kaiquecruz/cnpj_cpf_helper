@@ -7,8 +7,8 @@ abstract class CnpjCpfBase {
   static final _specialChar = '#';
 
   /// Removes all non-number characters from string
-  static String onlyNumbers(String value) {
-    return value?.replaceAll(RegExp('[^0-9]'), '')?.trim() ?? '';
+  static String onlyNumbers(String? value) {
+    return value?.replaceAll(RegExp('[^0-9]'), '').trim() ?? '';
   }
 
   /// Returns if CNPJ document is valid
