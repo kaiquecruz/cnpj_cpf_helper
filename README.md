@@ -7,7 +7,7 @@ This library helps with CNPJ and CPF validations. Both of them are brazilian a d
 A simple usage example:
 
 ```dart
-import 'package:cnpj_cpf_helper/cnpj_cpf_helper.dart';
+import 'package:cnpj_cpf_helper_nullsafety/cnpj_cpf_helper_nullsafety.dart';
 
 void main() {
   // generate a random cnpj
